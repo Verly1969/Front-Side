@@ -1,1 +1,75 @@
-<p>login works!</p>
+<div class="login-container">
+    <div class="login-card">
+
+        <!-- Logo / Titre -->
+        <div class="login-header">
+            <h1>Connexion</h1>
+            <p>
+                Bienvenue, connectez-vous à votre compte
+            </p>
+        </div>
+
+        <!-- Formulaire -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email"
+                    formControlName="email"
+                    placeholder="votre@email.com"
+                    [class.error]="isFieldInvalid('email')"
+                >
+                @if (isFieldInvalid('email'))
+                {
+                    <span class="error-msg">
+                        Email invalide
+                    </span>
+                }
+            </div>
+
+            <!-- Mot de passe -->
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input  
+                    id="password"
+                    [type]="showPassword ? 'text' : 'password'"
+                    formControlName="password"
+                    placeholder="**********"
+                    [class.error]="isFieldInvalid('password')"
+                />
+                <button 
+                    type="button"
+                    class="toggle-password"
+                    (click)="togglePassword()"
+                >{{ showPassword ? '🙈' : '👁️'}}</button>
+
+                @if (isFieldInvalid('password'))
+                {
+                    <span class="error-msg">
+                        Mot de passe requis (8 caractères minimum)
+                    </span>
+                }
+            </div>
+
+            <!-- Message d'erreur serveur -->
+            @if (errorMessage)
+            {
+                <div class="server-error">
+                    {{ errorMessage}}
+                </div>
+            }
+
+            <!-- Bouton submit -->
+            <button 
+                type="submit"
+                class="btn-submit"
+                [disabled]="loginForm.invalid || isLoading"
+            >
+                {{ isLoading ? 'Connexion...' : 'Se connecter'}}
+            </button>
+        </form>
+    </div>
+</div>

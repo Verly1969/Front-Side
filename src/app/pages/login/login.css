@@ -1,0 +1,125 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #050810;
+    padding: 20px;
+}
+
+.login-card {
+    background: #0e1628;
+    border: 1px solid #1a2540;
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.login-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #e2e8f0;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+.form-group input {
+    background: #111827;
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #e2e8f0;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.form-group input:focus {
+    border-color: #00d4ff;
+}
+
+.form-group input.error {
+    border-color: #ef4444;
+}
+
+.input-password {
+    position: relative;
+}
+
+.input-password input {
+    padding-right: 48px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.error-msg {
+    font-size: 12px;
+    color: #ef4444;
+}
+
+.server-error {
+    background: rgba(239,68,68,0.1);
+    border: 1px solid rgba(239,68,68,0.3);
+    border-radius: 8px;
+    padding: 12px;
+    color: #ef4444;
+    font-size: 13px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.btn-submit {
+    width: 100%;
+    background: #00d4ff;
+    color: #050810;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    opacity: 0.85;
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
